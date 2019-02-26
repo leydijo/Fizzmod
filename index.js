@@ -9,19 +9,39 @@
 */
 
 //mapCustomizado => representa la funcion que ustedes tendrían que crear
-let numeros = [1,2,3,4]
+ 
 
 mapCustomizado(numeros,numero=>numero+1) //[2,3,4,5]
- let numeros = [1,2,3,4]
- function mapCustomizado(){
-    for(i= 0; i < numeros.lenght; i++){
-     
-    }
- }
-      alert(numeros[i])
-
 mapCustomizado(numeros,(numero,indice)=>numero+indice) //[1,3,5,7]
 mapCustomizado(numeros,numero=>{}) //[undefined,undefined,undefined,undefined]
+function mapcustomizado(selector){
+	let selector;
+	let numeros=[1,2,3,4];
+	let array =[];
+ 
+	if (selector==1){
+	for(let i=0;i<numeros.length;i++){
+		array[i]=numeros[i]+1;
+	}
+	return array;
+	}else if(selector==2){
+		for(let i=0;i<numeros.length;i++){
+		array[i]=numeros[i]+i;
+	}
+	return array;
+	}else if(selector==3){
+		for(let i=0;i<numeros.length;i++){
+		array[i]=undefined;
+	}
+	return array;
+	}
+	
+}
+
+let test = mapcustomizado(1);
+
+console.log(test);
+
 
 // /**
 //  * 4) Modificar el prototipo de la funcion constructora Array para que admita como nuevo método la funcion customizada del paso anterior para que cumpla los siguientes tests :
@@ -37,21 +57,57 @@ mapCustomizado(numeros,numero=>{}) //[undefined,undefined,undefined,undefined]
  * separa los miembros mayores de 40 años y menores de 25 años en un array y todo el resto en un segundo array.
  *  Ambos arrays tienen que estar compuestos únicamente por los nombres de las personas. 
  * Por último cada array tiene que estar ordenado alfabeticamente.
- */
+ */  
+let group1 = [];
+let group2 = [];
+let name = [];
 
-//  let llenar =[]
-// let miembros = { 
-//     pedro : 35 , 
-//     ana : 18 , 
-//     carlos : 43 ,
-//     juan : 21 , 
-//     maria : 29 ,
-//     angela : 31 ,
-//     jose : 23 ,
-//     mariana : 41 ,
-//     eugenio : 19 ,
-
+let miembros = { 
+        pedro : 35 , 
+        ana : 18 , 
+        carlos : 43 ,
+        juan : 21 , 
+        maria : 29 ,
+        angela : 31 ,
+        jose : 23 ,
+        mariana : 41 ,
+        eugenio : 19 ,
     
+        
+    
+    }
+let array = Object.keys(miembros).map(function(key) {
+    return [miembros[key]];
+  });
+let array1 = Object.keys(miembros).map(function(key) {
+    return [[key]];
+  });
+
+//   console.log(array)
+
+
+for(let i=0;i<array.length;i++){
+    if(array[i]>40 || array[i]<25){
+        group1.push(array1[i])
+        // name.push(array1[i])
+    }else{
+        group2.push(array1[i])
+    }
+    
+}
+
+group1.sort();
+
+// for(let i=0;i<mayor.length;i++){
+    
+//     console.log(mayor[i])
+    
+    
+// }
+console.log("mayores de 40 y menores de 25");
+  console.log(group1);
+  console.log("el resto");
+  console.log(group2);
 
 // }
 // let separar = Object.keys(miembros).map(function(key){
