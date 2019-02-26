@@ -9,18 +9,19 @@
 */
 
 //mapCustomizado => representa la funcion que ustedes tendrían que crear
+let numeros = [1,2,3,4]
 
- function Customizado(){
-    
-    for(i= 1; i < numeros.lenght; i++){
-        console.log(numeros[i] + "hola")
+mapCustomizado(numeros,numero=>numero+1) //[2,3,4,5]
+ let numeros = [1,2,3,4]
+ function mapCustomizado(){
+    for(i= 0; i < numeros.lenght; i++){
+     
     }
-    
  }
+      alert(numeros[i])
 
-
-// mapCustomizado(numeros,(numero,indice)=>numero+indice) //[1,3,5,7]
-// mapCustomizado(numeros,numero=>{}) //[undefined,undefined,undefined,undefined]
+mapCustomizado(numeros,(numero,indice)=>numero+indice) //[1,3,5,7]
+mapCustomizado(numeros,numero=>{}) //[undefined,undefined,undefined,undefined]
 
 // /**
 //  * 4) Modificar el prototipo de la funcion constructora Array para que admita como nuevo método la funcion customizada del paso anterior para que cumpla los siguientes tests :
