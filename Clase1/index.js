@@ -11,14 +11,17 @@
 //mapCustomizado => representa la funcion que ustedes tendrían que crear
  
 
-mapCustomizado(numeros,numero=>numero+1) //[2,3,4,5]
-mapCustomizado(numeros,(numero,indice)=>numero+indice) //[1,3,5,7]
-mapCustomizado(numeros,numero=>{}) //[undefined,undefined,undefined,undefined]
-function mapcustomizado(selector){
-	let selector;
+/** mapCustomizado(numeros,numero=>numero+1) //[2,3,4,5]
+    mapCustomizado(numeros,(numero,indice)=>numero+indice) //[1,3,5,7]
+    mapCustomizado(numeros,numero=>{}) //[undefined,undefined,undefined,undefined]
+ */
+
+    let selector;
 	let numeros=[1,2,3,4];
-	let array =[];
- 
+    let array =[];
+    
+function mapcustomizado(selector){
+	
 	if (selector==1){
 	for(let i=0;i<numeros.length;i++){
 		array[i]=numeros[i]+1;
@@ -58,63 +61,46 @@ console.log(test);
  *  Ambos arrays tienen que estar compuestos únicamente por los nombres de las personas. 
  * Por último cada array tiene que estar ordenado alfabeticamente.
  */  
-let group1 = [];
-let group2 = [];
-let name = [];
+// let group1 = [];
+// let group2 = [];
+// let name = [];
 
-let miembros = { 
-        pedro : 35 , 
-        ana : 18 , 
-        carlos : 43 ,
-        juan : 21 , 
-        maria : 29 ,
-        angela : 31 ,
-        jose : 23 ,
-        mariana : 41 ,
-        eugenio : 19 ,
-    
-        
-    
-    }
-let array = Object.keys(miembros).map(function(key) {
-    return [miembros[key]];
-  });
-let array1 = Object.keys(miembros).map(function(key) {
-    return [[key]];
-  });
+// let miembros = { 
+//         pedro : 35 , 
+//         ana : 18 , 
+//         carlos : 43 ,
+//         juan : 21 , 
+//         maria : 29 ,
+//         angela : 31 ,
+//         jose : 23 ,
+//         mariana : 41 ,
+//         eugenio : 19 ,
+ 
+//     }
+// let array = Object.keys(miembros).map(function(key) {
+//     return [miembros[key]];
+//   });
+// let array1 = Object.keys(miembros).map(function(key) {
+//     return [[key]];
+//   });
 
-//   console.log(array)
+// for(let i=0;i<array.length;i++){
+//     if(array[i]>40 || array[i]<25){
+//         group1.push(array1[i])
 
-
-for(let i=0;i<array.length;i++){
-    if(array[i]>40 || array[i]<25){
-        group1.push(array1[i])
-        // name.push(array1[i])
-    }else{
-        group2.push(array1[i])
-    }
-    
-}
-
-group1.sort();
-
-// for(let i=0;i<mayor.length;i++){
-    
-//     console.log(mayor[i])
-    
+//     }else{
+//         group2.push(array1[i])
+//     }
     
 // }
-console.log("mayores de 40 y menores de 25");
-  console.log(group1);
-  console.log("el resto");
-  console.log(group2);
 
-// }
-// let separar = Object.keys(miembros).map(function(key){
-//     return[Number(key), miembros[key]];
-//     llenar.push(miembros)
-// });
-// console.log(llenar)
+// group1.sort();
+
+// console.log("mayores de 40 y menores de 25");
+//   console.log(group1);
+//   console.log("el resto");
+//   console.log(group2);
+  
 // /**
 //  * 4) Crear un fork de este repositorio en sus propias cuentas
 //  * 5) Clonar el fork obtenido
